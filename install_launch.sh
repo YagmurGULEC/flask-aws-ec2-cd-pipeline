@@ -2,7 +2,7 @@
 sudo yum -y install python3 mysql
 pip3 install -r requirements.txt
 amazon-linux-extras install epel
-yum -y install stress
+sudo yum -y install stress
 export PHOTOS_BUCKET=${SUB_PHOTOS_BUCKET}
 export DATABASE_HOST=${SUB_DATABASE_HOST}
 export DATABASE_USER=${SUB_DATABASE_USER}

@@ -14,7 +14,6 @@ jobs:
     steps:
       - name: Checkout the files
         uses: actions/checkout@v2
-
       - name: Deploy to Server 1 in the target directory
         uses: easingthemes/ssh-deploy@main
         env:

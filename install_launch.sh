@@ -1,4 +1,5 @@
 #!/bin/bash -ex
+sudo su -
 yum -y install python3 mysql
 pip3 install -r requirements.txt
 amazon-linux-extras install epel

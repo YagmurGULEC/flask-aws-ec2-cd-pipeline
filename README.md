@@ -6,3 +6,4 @@ HOST_DNS: Public DNS record of the instance, it looks like ec2-xx-xxx.us-west2.c
 USERNAME:Will be the username of the EC2 instance, usually ec2-user or ubuntu depending on the operating system you choose.
 
 <img title="" alt="Alt text" src="github-secrets.png">
+

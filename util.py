@@ -3,6 +3,7 @@ import os
 from io import BytesIO
 from PIL import Image
 
+
 EXIF_ORIENTATION = 274  # Magic numbers from http://www.exiv2.org/tags.html
 
 def random_hex_bytes(n_bytes):

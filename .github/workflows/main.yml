@@ -30,6 +30,6 @@ jobs:
             key: ${{ secrets.EC2_SSH_KEY }}
             script: |
               cd ${{ github.event.repository.name }}
-              sudo su-
-              yum -y install python3 mysql
+              sudo su -
+              yum update -y
 

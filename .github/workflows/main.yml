@@ -15,15 +15,6 @@ jobs:
       - name: Checkout the files
         uses: actions/checkout@v2
 
-      - name: Make a directory remote ssh commands
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST_DNS }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            mkdir -p $HOME/FlaskApp
-
       - name: Deploy to Server 1 in the target directory
         uses: easingthemes/ssh-deploy@main
         env:
@@ -31,5 +22,13 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ github.event.repository.name }}
-         
+      - name: Executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@master
+        with:
+            host: ${{ secrets.HOST_DNS }}
+            username: ${{ secrets.USERNAME }}
+            key: ${{ secrets.EC2_SSH_KEY }}
+            script: |
+              cd ${{ github.event.repository.name }}
+              ./install_launch.sh
 

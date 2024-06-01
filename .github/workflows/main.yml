@@ -24,4 +24,11 @@ jobs:
           script: |
             mkdir -p $HOME/FlaskApp
 
+      - name: Deploy to Server 1 in the target directory
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: $HOME/FlaskApp
 

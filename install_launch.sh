@@ -1,5 +1,5 @@
 #!/bin/bash -ex
-yum -y install python3 mysql
+sudo yum -y install python3 mysql
 pip3 install -r requirements.txt
 amazon-linux-extras install epel
 yum -y install stress
